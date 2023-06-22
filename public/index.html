@@ -6,24 +6,75 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-
+    
+    <!-- External Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/styles.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
+    <script defer type="text/javascript" src="/scripts/client.js"></script>
+    <script defer type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <div class="nav-left">
+        <span class="nav-label">tweeter</span>
+      </div>
+      <div class="nav-right">
+        <div class="nav-newtweet">
+          <div>
+            <span style="font-weight: 600">Write&nbsp;</span>a new tweet
+          </div>
+          <div>
+            <i class="fa-solid fa-angles-down" style="color: red"></i>
+          </div>
+        </div>
+      </div>
     </nav>
+    <header>
+      <div class="avatar"style="">
+        <div>
+          <img src="/images/profile-hex.png"> 
+        </div>
+        <div class="avatar-username">
+          Your Name
+        </div>
+      </div>
+    </header>
+    <main class="container">
 
-    <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+      <section class="new-tweet">
+        
+        <form action="/tweets/" method="POST">
+          <textarea id="new-tweet-textarea" name="text" placeholder="What are you humming about?"  rows="2" id="tweet-text"></textarea>
+          <div class="new-tweet-footer">
+            <button type="submit">Tweet</button>
+            <output name="counter" id="new-tweet-counter" class="counter" for="tweet-text">140</output>
+          </div class="new-tweet-footer">
+        </form>
+      </section>
+
+      <!-- <h3>Introduction</h3>
+      <p>Front end web development is an exciting and rewarding field of web development. It involves the creation of the user interface – the visual elements that people interact with when they come to your website or web application. It’s a great way to create visually appealing and interactive experiences for users.</p>
+      <h3>The Technology</h3>
+      <p>With front end web development you can employ a variety of technologies and design principles in order to create creative and responsive designs that give users a seamless experience navigating through your website. You get to combine your creativity with programming knowledge, allowing you to create amazing and unique looking websites and applications.</p>
+      <h3>Conclusion</h3>
+      <p>The best part about front end web development is that it allows you to make a real impact on how your website looks, feels, and functions. What’s great about this field is that you can always be learning new techniques, as well as keep up with new trends in design. Plus, the satisfaction from creating something beautiful and functional is unmatched.</p> -->
+    </main>
   </body>
 </html>

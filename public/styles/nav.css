@@ -1,0 +1,13 @@
+nav {
+  height: 120px;
+  background-color: #4056A1;
+  color: white;
+  display: flex; 
+  width: 100%;
+  justify-content: space-between; 
+  position: fixed;
+}
+
+/* nav after {
+wtf is this?
+} */
