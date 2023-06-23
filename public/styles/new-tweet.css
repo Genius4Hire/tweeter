@@ -3,6 +3,7 @@
   flex-direction: column;
   padding: 0 2em;
   margin-top : 1em;
+  margin-bottom : 2em;
 }
 
 
@@ -19,15 +20,15 @@
 
 .new-tweet form textarea {
   display: flex;
-  background-color: #f4f1ec;
   color: #555149;
+  background-color: #f4f1ec;
   font-size: 24px;
   font-weight: 600;
   font-family: 'Source Sans 3', sans-serif;
   height: 3em;
   border: none;
   resize: none;
-  border-bottom: solid thick
+  border-bottom: solid thick;
 }
 
 .new-tweet form textarea:focus {
@@ -43,13 +44,12 @@
 
 .new-tweet form label {
   display: flex;
-  background-color: aquamarine;
 }
 
 .new-tweet form button {
   display: flex;
   font-family: 'Bungee', cursive; 
-  color: white;
+  color: #f4f1ec;
   background-color: #4056A1;
   border: none;
   padding: 0.2em 0.3em;

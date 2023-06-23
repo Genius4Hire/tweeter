@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
@@ -14,11 +14,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       
     <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/styles.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/styles.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/all-tweets.css" type="text/css" />
+    <!-- <link rel="stylesheet" href="/styles/footer.css" type="text/css" /> -->
+
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -46,7 +49,9 @@
         </div>
       </div>
     </nav>
-    <header>
+
+    <!-- Header -->
+    <header id="body-header">
       <div class="avatar"style="">
         <div>
           <img src="/images/profile-hex.png"> 
@@ -56,10 +61,12 @@
         </div>
       </div>
     </header>
+
+    <!-- Main -->
     <main class="container">
 
+
       <section class="new-tweet">
-        
         <form action="/tweets/" method="POST">
           <textarea id="new-tweet-textarea" name="text" placeholder="What are you humming about?"  rows="2" id="tweet-text"></textarea>
           <div class="new-tweet-footer">
@@ -69,6 +76,39 @@
         </form>
       </section>
 
+
+      <section class="all-tweets"> 
+
+        <article class="article-div">
+          <header>
+            <div class="avatar">
+              <div><img src="/images/profile-hex.png" height="100px"></div>
+              <div>Little Miss Nobody</div>
+            </div>
+            <div class="username">
+              <div>@handle</div>
+            </div>  
+          </header>
+          <div class="all-tweets-main">
+            😎 I'm 💯% confident in my abilities and think I'm awesome! Just another day living the dream #LivingMyBestLife #LovingMe 🤩👊🏼✨
+          </div>
+          <footer>
+            <div class="time" style="margin-left: 1em;">Time ago:</div>
+            <div class="icons" id="xyz">
+              <span class="flag-icon">F</span>
+              <span class="retweet-icon">R</span>
+              <span class="like-icon">L</span>
+            </div>
+          </footer>
+        </article>
+
+
+
+      </section>
+
+
+
+      </section>
       <!-- <h3>Introduction</h3>
       <p>Front end web development is an exciting and rewarding field of web development. It involves the creation of the user interface – the visual elements that people interact with when they come to your website or web application. It’s a great way to create visually appealing and interactive experiences for users.</p>
       <h3>The Technology</h3>
@@ -76,5 +116,10 @@
       <h3>Conclusion</h3>
       <p>The best part about front end web development is that it allows you to make a real impact on how your website looks, feels, and functions. What’s great about this field is that you can always be learning new techniques, as well as keep up with new trends in design. Plus, the satisfaction from creating something beautiful and functional is unmatched.</p> -->
     </main>
+
+    <!-- Footer  -->
+    <footer>
+
+    </footer>
   </body>
 </html>
