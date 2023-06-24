@@ -1,0 +1,87 @@
+.past-tweet {
+  display: flex;
+  flex-direction: column;
+  border: 4px solid #545149;
+  border-radius: 0.3em;
+  padding: 1em;
+  order: 10;
+  margin-bottom: 1em;
+  text-align: left;
+  transition: box-shadow .5s;
+  box-shadow: 0.3em 0.3em 0.3em rgba(0, 0, 0, 0);
+}
+
+.past-tweet:hover {
+  display: flex;
+  transition: box-shadow .5s;
+  box-shadow: 0.3em 0.3em 0.3em rgba(0, 0, 0, 0.35);
+}
+
+.past-tweet .tweet{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.past-tweet .tweet header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  
+}
+.past-tweet .tweet header .photo {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.past-tweet .tweet header .photo a {
+  margin-left: 0.5em;
+}
+
+.past-tweet .tweet header .handle{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: bold;
+  color: #dadada
+}
+
+.past-tweet .tweet .tweet-body {
+  display: flex;
+  flex-direction: row;
+  border-bottom: thick solid;
+  margin-bottom: 0.5em;
+  padding: 1em 0.5em;
+  font-weight: bold;
+}
+
+.past-tweet .tweet footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 0.5em;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.past-tweet .tweet footer i {
+  margin : 0 0.8em
+}
+
+i.fa-solid.fa-flag,
+i.fa-solid.fa-retweet,
+i.fa-solid.fa-heart {
+  color: #545149;
+  transition: color .3s;
+  cursor: pointer;
+}
+
+i.fa-solid.fa-flag:hover,
+i.fa-solid.fa-retweet:hover,
+i.fa-solid.fa-heart:hover {
+  color: rgb(128, 133, 231);
+  transition: color .3s;
+}

@@ -14,16 +14,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       
     <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/styles.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/all-tweets.css" type="text/css" />
-    <!-- <link rel="stylesheet" href="/styles/footer.css" type="text/css" /> -->
-
-
-    <!-- External JS -->
+    <link rel="stylesheet" href="/styles/past-tweet.css" type="text/css" />
+    
+    <!-- Vendor Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
@@ -33,19 +30,17 @@
   </head>
 
   <body>
-    <!-- Top nav bar (fixed) -->
+    <!-- Nav bar -->
     <nav>
       <div class="nav-left">
         <span class="nav-label">tweeter</span>
       </div>
       <div class="nav-right">
-        <div class="nav-newtweet">
-          <div>
-            <span style="font-weight: 600">Write&nbsp;</span>a new tweet
-          </div>
-          <div>
-            <i class="fa-solid fa-angles-down" style="color: red"></i>
-          </div>
+        <div class="top">
+          <span style="font-weight: bold">Write&nbsp;</span>a new tweet
+        </div>
+        <div class="bottom">
+          <i class="fa-solid fa-angles-down"></i>
         </div>
       </div>
     </nav>
@@ -57,69 +52,27 @@
           <img src="/images/profile-hex.png"> 
         </div>
         <div class="avatar-username">
-          Your Name
+          Fred Flintstone
         </div>
       </div>
     </header>
 
     <!-- Main -->
-    <main class="container">
-
-
+    <main class="container" id="tweets-container">
       <section class="new-tweet">
-        <form action="/tweets/" method="POST">
-          <textarea id="new-tweet-textarea" name="text" placeholder="What are you humming about?"  rows="2" id="tweet-text"></textarea>
-          <div class="new-tweet-footer">
-            <button type="submit">Tweet</button>
-            <output name="counter" id="new-tweet-counter" class="counter" for="tweet-text">140</output>
-          </div class="new-tweet-footer">
+        <!-- <h2>Compose Tweet</h2> -->
+        <form method="POST" action="/tweets">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea class="tweet-content" name="text" placeholder="What are you humming about?" id="tweet-text"></textarea>
+          <footer class="footer">
+            <button class="button" type="submit">Tweet</button>
+            <output class="counter" name="counter" for="tweet-text">140</output>
+          </footer>
         </form>
       </section>
-
-
-      <section class="all-tweets"> 
-
-        <article class="article-div">
-          <header>
-            <div class="avatar">
-              <div><img src="/images/profile-hex.png" height="100px"></div>
-              <div>Little Miss Nobody</div>
-            </div>
-            <div class="username">
-              <div>@handle</div>
-            </div>  
-          </header>
-          <div class="all-tweets-main">
-            😎 I'm 💯% confident in my abilities and think I'm awesome! Just another day living the dream #LivingMyBestLife #LovingMe 🤩👊🏼✨
-          </div>
-          <footer>
-            <div class="time" style="margin-left: 1em;">Time ago:</div>
-            <div class="icons" id="xyz">
-              <span class="flag-icon">F</span>
-              <span class="retweet-icon">R</span>
-              <span class="like-icon">L</span>
-            </div>
-          </footer>
-        </article>
-
-
-
+      <section>
+        <!-- Past tweets rendered here -->
       </section>
-
-
-
-      </section>
-      <!-- <h3>Introduction</h3>
-      <p>Front end web development is an exciting and rewarding field of web development. It involves the creation of the user interface – the visual elements that people interact with when they come to your website or web application. It’s a great way to create visually appealing and interactive experiences for users.</p>
-      <h3>The Technology</h3>
-      <p>With front end web development you can employ a variety of technologies and design principles in order to create creative and responsive designs that give users a seamless experience navigating through your website. You get to combine your creativity with programming knowledge, allowing you to create amazing and unique looking websites and applications.</p>
-      <h3>Conclusion</h3>
-      <p>The best part about front end web development is that it allows you to make a real impact on how your website looks, feels, and functions. What’s great about this field is that you can always be learning new techniques, as well as keep up with new trends in design. Plus, the satisfaction from creating something beautiful and functional is unmatched.</p> -->
     </main>
-
-    <!-- Footer  -->
-    <footer>
-
-    </footer>
   </body>
 </html>

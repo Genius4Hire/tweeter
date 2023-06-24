@@ -1,63 +1,56 @@
 .new-tweet {
   display: flex;
   flex-direction: column;
-  padding: 0 2em;
-  margin-top : 1em;
-  margin-bottom : 2em;
+  margin-bottom: 1em;
+  color: #545149;
+  order: 1;
 }
 
+.new-tweet h2{
+  visibility: hidden;
+}
 
 .new-tweet form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
-.new-tweet form .new-tweet-header {
-  display: flex;
-  flex-direction: column;
+.new-tweet form label{
+  font-weight: bold;
+  visibility: hidden;
 }
 
-.new-tweet form textarea {
+.new-tweet form .tweet-content {
   display: flex;
-  color: #555149;
-  background-color: #f4f1ec;
-  font-size: 24px;
-  font-weight: 600;
-  font-family: 'Source Sans 3', sans-serif;
-  height: 3em;
+  background: none;
   border: none;
-  resize: none;
-  border-bottom: solid thick;
-}
-
-.new-tweet form textarea:focus {
+  border-bottom: thick solid #545149;
+  ;
+  font-weight: bold;
+  line-height: 1em;
   outline: none;
+  margin: 0.8em 0;
 }
 
-.new-tweet form .new-tweet-footer {
+.new-tweet form .tweet-content::placeholder {
+  font-weight: bold;
+  color: #545149;
+}
+
+.new-tweet form .footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 0.5em;
+  font-family: 'Bungee', cursive;
 }
-
-.new-tweet form label {
+.new-tweet form .footer .button {
   display: flex;
-}
-
-.new-tweet form button {
-  display: flex;
-  font-family: 'Bungee', cursive; 
-  color: #f4f1ec;
-  background-color: #4056A1;
+  color: white;
   border: none;
-  padding: 0.2em 0.3em;
+  background-color: #4056A1;
+}
+.new-tweet form .footer .counter{
+  display: flex;
+
 }
 
-.new-tweet form output {
-  display: flex;
-  width: 5em;
-    font-family: 'Bungee', cursive; 
-  justify-content: end;
-}

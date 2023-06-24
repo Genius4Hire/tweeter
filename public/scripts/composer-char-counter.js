@@ -9,7 +9,6 @@ $(document).ready(function() {
     }
   );
 
-
   $(".flag-icon").hover(function() {
     $(this).css("color", "#cb9826")
   }, 
@@ -31,20 +30,14 @@ $(document).ready(function() {
     $(this).css("color", "#49569c")
   });
 
-
-  $("#new-tweet-textarea").keyup(function() {
+  $("#new-tweet-textarea").on("input", function(event) {
+    let $input = $(this);
     const maxLength = 140;
-    const currentText = $(this).val();
-    const currentLength = $(this).val().length;
+    const currentLength = $input.val().length;
     const charsRemaining = maxLength - currentLength;
-    $("#new-tweet-counter").text(charsRemaining)
-    if (charsRemaining < 0) {
-      $("#new-tweet-counter").css({'color': '#ff0000'});
-    } else {
-      $("#new-tweet-counter").css({'color': '#555149'});
-    };
-
-
+    const $counter = $input.closest("form").find(".counter");
+    $counter.text(charsRemaining);
+    $counter.toggleClass('alert-color', (charsRemaining < 0));
   });
 
 
