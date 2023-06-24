@@ -25,7 +25,6 @@ $(() => {
     }
   ]
   
-  
   function createTweetElement(tweet) {
     const englishDate = new Date(tweet.created_at).toLocaleDateString("en-US");
     // prevent cross site    
@@ -59,14 +58,46 @@ $(() => {
 
   function renderTweets (tweets) {
     let tweetsContainer = $('.container');
-    console.log("Tweet HTML:",tweetsContainer);
     for (tweet of tweets) {
       let tweetElement = createTweetElement(tweet); 
-      console.log(tweetElement); // to see what it looks like
       tweetsContainer.prepend(tweetElement); 
     }
 
   }
   
+  const $newTweetForm = $('.new-tweet form'); //grab the form
+
+  $newTweetForm.on('submit', function(event) {
+    //event.preventDefault();
+    const tweetContents = $('textarea#tweet-text.tweet-content').val();
+    const tweetLength = tweetContents.length;
+    console.log(tweetContents);
+    console.log(tweetLength);
+    // // over limit?
+    // if (tweetLength > 140) {
+    //   return;
+    // }
+
+    // // no content?
+    // if (!tweetLength) {
+    //   return;
+    // }
+    // // serialize the form data and send it to the server as a query string
+    // const data = $newTweetForm.serialize();
+
+    const data = $newTweetForm.serialize();
+    console.log($newTweetForm.serialize());
+
+    $.ajax({
+      url: 'http://localhost:8080/tweets',
+      method: 'POST',
+      data: data,
+      success: () => {
+        $('.exceeds-limit').hide();
+        $('.no-content').hide();
+      }
+    });
+  });
+
    renderTweets(data);
 });
