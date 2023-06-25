@@ -65,16 +65,23 @@ $(() => {
   $newTweetForm.on('submit', function(event) {
     event.preventDefault();
     let tweetContents = $('textarea#tweet-text.tweet-content').val();
-    let URLParams = $newTweetForm.serialize();
+    const tweetLength = tweetContents.length;
 
-    $.ajax({
-      url: 'http://localhost:8080/tweets',
-      method: 'POST',
-      data: URLParams,
-      success: () => {
-        loadTweets();
-      }
-    });
+    if (tweetLength <= 140) {
+      let URLParams = $newTweetForm.serialize();
+      $.ajax({
+        url: 'http://localhost:8080/tweets',
+        method: 'POST',
+        data: URLParams,
+        success: () => {
+          loadTweets();
+        },
+        fail: () => {
+        } 
+      });
+    } else {
+      window.alert("Sorry, that tweet is too long!");
+    }
   });
 
 });

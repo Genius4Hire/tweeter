@@ -51,6 +51,10 @@
 }
 .new-tweet form .footer .counter{
   display: flex;
+  
+}
 
+.alert-color {
+  color: red;
 }
 
