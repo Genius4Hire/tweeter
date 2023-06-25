@@ -2,18 +2,25 @@ $(() => {
   const createTweetElement = function(tweet) {
     const timeStampUNIX = new Date(tweet.created_at).toLocaleDateString("en-US");
     const timeAgo = timeago.format(timeStampUNIX);
+
+    const escape = function (str) {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
+    
     let tweetHTML = `
     <section class="past-tweet">
       <article class="tweet">
         <header>
           <div class="photo">
-          <img src="${tweet.user.avatars}">
-          <a>${tweet.user.name}</a>
+          <img src="${escape(tweet.user.avatars)}">
+          <a>${escape(tweet.user.name)}</a>
           </div>
-          <a class="handle">${tweet.user.handle}</a>
+          <a class="handle">${escape(tweet.user.handle)}</a>
         </header>
         <div class="tweet-body">
-          <a class="tweet-content">${tweet.content.text}</a>
+          <a class="tweet-content">${escape(tweet.content.text)}</a>
         </div>
         <footer>
           <a>${timeAgo}</a>
