@@ -1,14 +1,38 @@
 .new-tweet {
   display: flex;
   flex-direction: column;
+  width: 100%;
   margin-bottom: 1em;
   color: #545149;
   order: 1;
 }
 
-.new-tweet h2{
-  visibility: hidden;
+.new-tweet .error-popups {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Bungee', cursive;
+  width: 100%;
+  margin-top: 0.2em;
 }
+
+.new-tweet .error-popups .error {
+  display: none;
+  align-items: center;
+  padding: 0.3em;
+  margin: 0.1em 0 0.1em 0;
+  border-radius: 0.3em;
+  color: #FFFFFF;
+  background: #ff4a39;
+  text-shadow: 0 0 7px #000000;
+  border: 0.06em solid rgba(33, 0, 0, 0.25);
+  
+}
+
+.new-tweet h2{
+  visibility: collapse;
+}
+
 
 .new-tweet form {
   display: flex;

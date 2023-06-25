@@ -62,6 +62,12 @@
     <main class="container" id="tweets-container">
       <section class="new-tweet">
         <!-- <h2>Compose Tweet</h2> -->
+        <div class="error-popups">
+          <span class="error" id="too-long">This tweet is too loooooong!</span>
+          <span class="error" id="invalid">This tweet is too long!</span>
+          <span class="error" id="too-young">This tweet is too long!</span>
+          <span class="error" id="too-old">This tweet is too long!</span>
+        </div>
         <form method="POST" action="/tweets/">
           <label for="tweet-text">What are you humming about?</label>
           <textarea class="tweet-content" id="tweet-text" name="text" placeholder="What are you humming about?" ></textarea>

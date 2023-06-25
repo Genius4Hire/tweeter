@@ -48,6 +48,11 @@ $(() => {
 
   }
   
+  const popUpErr = function(errorclass) {
+
+    
+  }
+
   const loadTweets = function() {
     // make a request to /tweets and receive the array of tweets
     // receive the array of tweets as JSON
@@ -73,7 +78,11 @@ $(() => {
     event.preventDefault();
     let tweetContents = $('textarea#tweet-text.tweet-content').val();
     const tweetLength = tweetContents.length;
+    const tweetIsValid = (tweetLength <= 140)
 
+    $("#too-long").slideUp(600);
+    if (!tweetIsValid) $("#too-long").slideDown(300);
+    
     if (tweetLength <= 140) {
       let URLParams = $newTweetForm.serialize();
       $.ajax({
@@ -84,10 +93,14 @@ $(() => {
           loadTweets();
         },
         fail: () => {
+          $("#invalid").slideDown(300);
+          setTimeout(() => {
+            $("#invalid").slideUp(600);
+          },2000)
         } 
       });
     } else {
-      window.alert("Sorry, that tweet is too long!");
+ 
     }
   });
 
