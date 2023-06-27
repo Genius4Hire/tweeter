@@ -14,11 +14,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       
     <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/past-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="styles/styles.css" type="text/css" />
+    <link rel="stylesheet" href="styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="styles/past-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="styles/layout.css" type="text/css" />
     
     <!-- Vendor Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -28,10 +29,14 @@
     <script defer type="text/javascript" src="/scripts/client.js"></script>
     <script defer type="text/javascript" src="/scripts/composer-char-counter.js"></script>
     
+    <!-- Disable Viewport Zooming -->
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    
   </head>
 
   <body>
-    <!-- Nav bar -->
+
+    <!-- Navigation Bar -->
     <nav>
       <div class="nav-left">
         <span class="nav-label">tweeter</span>
@@ -46,7 +51,7 @@
       </div>
     </nav>
 
-    <!-- Header -->
+    <!-- Content Header -->
     <header id="body-header">
       <div class="avatar"style="">
         <div>
@@ -58,10 +63,11 @@
       </div>
     </header>
 
-    <!-- Main -->
+    <!-- Tweets -->
     <main class="container" id="tweets-container">
+      <!-- New Tweets Section -->
       <section class="new-tweet">
-        <!-- <h2>Compose Tweet</h2> -->
+        <h2>Compose Tweet</h2>
         <div class="error-popups">
           <span class="error" id="too-long">This tweet is too loooooong!</span>
           <span class="error" id="invalid">This tweet is too long!</span>
@@ -77,9 +83,11 @@
           </footer>
         </form>
       </section>
+
+      <!-- Past Tweets Sections (dynamic) -->
       <section>
-        <!-- Past tweets rendered here -->
       </section>
+
     </main>
   </body>
 </html>

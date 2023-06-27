@@ -1,34 +1,62 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
-html {
-  box-sizing: border-box;
+
+/* Smart Phone Layout */
+@media screen and (max-width:770px) {
+  body {
+    flex-direction: column;
+    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+  }
+
+  nav {
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, inset 0px 0px 21px 3px rgba(0,0,0,0); 
+    box-shadow: 0px 10px 13px -7px #000000, inset 0px 0px 21px 3px rgba(0,0,0,0);
+  }
+
+  .new-tweet {
+    margin-top: 0px;
+  }
+
+  .nav-right {
+    visibility: hidden;
+  }
+
+  header{
+    display: flex;
+    width: 100%;
+    margin-top: 155px;
+    margin-left: 30px;
+    height: 400px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding: 2em;
+    margin-top: 120px;
+    margin-left: -0px;
+  }
 }
-*, *:before, *:after {
-  box-sizing: inherit;
-}
 
-/*
-* Global layout stuff
-*/
+/* Tablet / Desktop Layout */
+@media screen and (min-width: 770px){
+  body {
+    flex-direction: row;
+    background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+  }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+  header{
+    display: flex;
+    width: 66%;
+    margin-top: 155px;
+    margin-left: 30px;
+    height: 400px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding: 2em;
+  }
 
-body {
-  color: #545149;
-  background-color: #f6f8ff;
-  font-size: 24px;
-  font-family: 'Source Sans 3', sans-serif;
-}
+  main {
+    width:33%
+  }
 
-body main {
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
+  .new-tweet {
+    margin-top: 140px;
+  }
+ 
 }

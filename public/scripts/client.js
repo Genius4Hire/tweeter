@@ -1,9 +1,10 @@
 $(() => {
   const createTweetElement = function(tweet) {
-    const timeStampUNIX = new Date(tweet.created_at).toLocaleDateString("en-US");
+    const timeStampUNIX = tweet.created_at;
     const timeAgo = timeago.format(timeStampUNIX);
 
-    const escape = function (str) {
+    // XSS prevention..
+    const escape = function(str) {
       let div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
       return div.innerHTML;
@@ -12,46 +13,36 @@ $(() => {
     let tweetHTML = `
     <section class="past-tweet">
       <article class="tweet">
-        <header>
-          <div class="photo">
-          <img src="${escape(tweet.user.avatars)}">
-          <a>${escape(tweet.user.name)}</a>
-          </div>
-          <a class="handle">${escape(tweet.user.handle)}</a>
-        </header>
-        <div class="tweet-body">
-          <a class="tweet-content">${escape(tweet.content.text)}</a>
+        <div class="tweet-header">
+          <span class="tweet-header badge">
+            <img src="${escape(tweet.user.avatars)}">
+            <div>${escape(tweet.user.name)}</div>
+          </span>
+          <a class="tweet-header handle">${escape(tweet.user.handle)}</a>
         </div>
-        <footer>
-          <a>${timeAgo}</a>
-          <a>
+        <div class="tweet-body">
+          <a class="tweet-body content" >${escape(tweet.content.text)}</a>
+        </div>
+        <div class="tweet-footer">
+          <div class="tweet-footer time">${timeAgo}</div>
+          <div class"tweet-footer icons">
             <i class="fa-solid fa-flag"></i>
             <i class="fa-solid fa-retweet"></i>
             <i class="fa-solid fa-heart"></i>
-          </a>
-        </footer>
+          </div>
+        </div>
       </article>
     </section>
     `;
-   // let tweetElement = $tweet.append(html)
-    $('.container').prepend(tweetHTML); 
+    $('.container').prepend(tweetHTML);
   };
 
   const renderTweets = function(tweets) {
     const tweetsContainer = $('.container');
-    // tweetsContainer.empty();
-
-
     for (tweet of tweets) {
-      createTweetElement(tweet); 
+      createTweetElement(tweet);
     }
-
-  }
-  
-  const popUpErr = function(errorclass) {
-
-    
-  }
+  };
 
   const loadTweets = function() {
     // make a request to /tweets and receive the array of tweets
@@ -78,7 +69,7 @@ $(() => {
     event.preventDefault();
     let tweetContents = $('textarea#tweet-text.tweet-content').val();
     const tweetLength = tweetContents.length;
-    const tweetIsValid = (tweetLength <= 140)
+    const tweetIsValid = (tweetLength <= 140);
 
     $("#too-long").slideUp(600);
     if (!tweetIsValid) $("#too-long").slideDown(300);
@@ -96,12 +87,10 @@ $(() => {
           $("#invalid").slideDown(300);
           setTimeout(() => {
             $("#invalid").slideUp(600);
-          },2000)
-        } 
+          },2000);
+        }
       });
-    } else {
- 
-    }
+    };
   });
 
 });
