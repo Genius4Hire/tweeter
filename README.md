@@ -17,7 +17,7 @@ This repository is the starter code for the project: Students will fork and clon
 #### Desktop Version
 ![Desktop Version](docs/Tweeter%20-%20Desktop.jpg)
 #### Smart Phone Version
-![Smart Phone Version](docs/Tweeter%20-%20Smart%20Phone.jpg)
+![Smart Phone Version](docs/Tweeter%20-%20Smart%20phone.jpg)
 
 ## Dependencies
 
