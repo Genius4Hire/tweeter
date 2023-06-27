@@ -6,13 +6,21 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Getting Started
 
-1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
-2. Clone your repository onto your local device.
-3. Install dependencies using the `npm install` command.
+1. Clone your repository onto your local device.
+2. Install dependencies using the `npm install` command.
 3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
 4. Go to <http://localhost:8080/> in your browser.
+
+##### Note: This implementation only works within your local domain, functionality is limited if you use port forwarding to an outside virtual machine host.  
+
+## Screen shots
+#### Desktop Version
+![Desktop Version](public/images/Tweeter%20-%20Desktop.jpg)
+#### Desktop Version
+![Desktop Version](public/images/Tweeter%20-%20Smart%20Phone.jpg)
 
 ## Dependencies
 
 - Express
 - Node 5.10.x or above
+- Body parser
