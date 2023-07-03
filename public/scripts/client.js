@@ -34,21 +34,19 @@ $(() => {
       </article>
     </section>
     `;
-    $('.container').prepend(tweetHTML);
+    $('#tweets-container').prepend(tweetHTML);
   };
 
   const renderTweets = function(tweets) {
-    const tweetsContainer = $('.container');
+    const tweetsContainer = $('#tweets-container');
+    $('.past-tweet').remove();
     for (tweet of tweets) {
       createTweetElement(tweet);
     }
+
   };
 
   const loadTweets = function() {
-    // make a request to /tweets and receive the array of tweets
-    // receive the array of tweets as JSON
-    // call it right after its definition.
-    // our success callback function will simply call up renderTweets,passing it the response from the AJAX
     $.ajax({
       url: 'http://localhost:8080/tweets',
       method: 'GET',
@@ -69,24 +67,29 @@ $(() => {
     event.preventDefault();
     let tweetContents = $('textarea#tweet-text.tweet-content').val();
     const tweetLength = tweetContents.length;
-    const tweetIsValid = (tweetLength <= 140);
+    const tweetLengthIsValid = (tweetLength <= 140);
+    const tweetNotEmpty = (tweetLength != 0);
 
     $("#too-long").slideUp(600);
-    if (!tweetIsValid) $("#too-long").slideDown(300);
-    
-    if (tweetLength <= 140) {
+    if (!tweetLengthIsValid) $("#too-long").slideDown(300);
+
+    $("#tweet-empty").slideUp(600);
+    if (!tweetNotEmpty) $("#tweet-empty").slideDown(300);
+
+    if (tweetLengthIsValid && tweetNotEmpty) {
       let URLParams = $newTweetForm.serialize();
       $.ajax({
         url: 'http://localhost:8080/tweets',
         method: 'POST',
         data: URLParams,
         success: () => {
+          $('textarea#tweet-text.tweet-content').val('');
           loadTweets();
         },
         fail: () => {
-          $("#invalid").slideDown(300);
+          $("#post-error").slideDown(300);
           setTimeout(() => {
-            $("#invalid").slideUp(600);
+            $("#post-error").slideUp(600);
           },2000);
         }
       });
